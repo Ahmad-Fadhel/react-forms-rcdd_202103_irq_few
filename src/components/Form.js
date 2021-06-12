@@ -18,6 +18,20 @@ class Form extends React.Component {
       lastName: event.target.value
     })
   }
+  
+   handleSubmit = event => {
+    event.preventDefault();
+    let formData = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName
+    }
+
+    let dataArray = this.state.submittedData.concat(formData);
+    this.setState({
+      submittedData: dataArray
+    })
+    }
+  }
 
   render() {
     return (
